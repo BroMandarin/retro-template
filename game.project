@@ -15,7 +15,7 @@ immersive_mode = 1
 display_cutout = 0
 
 [project]
-title = def-base
+title = retro-template
 version = 0.0
 developer = BroMandarin
 
