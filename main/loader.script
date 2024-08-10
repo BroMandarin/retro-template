@@ -1,0 +1,26 @@
+local loaded = nil
+
+local function unload_loaded()
+	if loaded then
+		msg.post(loaded, "unload")
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+		msg.post(sender, "acquire_input_focus")
+	elseif message_id == hash("load_menu") then
+		unload_loaded()
+		msg.post("/menu#menuproxy", "load")
+		loaded = "/menu#menuproxy"
+	elseif message_id == hash("load_game") then
+		unload_loaded()
+		msg.post("/game#gameproxy", "load")
+		loaded = "/game#gameproxy"
+	elseif message_id == hash("load_results") then
+		unload_loaded()
+		msg.post("/results#resultsproxy", "load")
+		loaded = "/results#resultsproxy"
+	end
+end
