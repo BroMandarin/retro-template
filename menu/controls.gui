@@ -1,0 +1,75 @@
+script: ""
+fonts {
+  name: "press_start_8"
+  font: "/assets/font/press_start_8.font"
+}
+textures {
+  name: "menu"
+  texture: "/menu/menu.atlas"
+}
+nodes {
+  size {
+    x: 1.0
+    y: 1.0
+  }
+  type: TYPE_BOX
+  id: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 96.0
+    y: 90.0
+  }
+  size {
+    x: 320.0
+    y: 8.0
+  }
+  color {
+    x: 0.698
+    y: 0.063
+    z: 0.188
+  }
+  type: TYPE_TEXT
+  text: "MOVE\n"
+  "\n"
+  "\n"
+  "ACTION\n"
+  "\n"
+  "\n"
+  "START"
+  font: "press_start_8"
+  id: "text_a"
+  pivot: PIVOT_W
+  parent: "root"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 224.0
+    y: 90.0
+  }
+  size {
+    x: 320.0
+    y: 8.0
+  }
+  type: TYPE_TEXT
+  text: "\n"
+  "\n"
+  "ARROWS\n"
+  "\n"
+  "\n"
+  "X/SPACE\n"
+  "\n"
+  "\n"
+  "ENTER"
+  font: "press_start_8"
+  id: "text_b"
+  pivot: PIVOT_E
+  parent: "root"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

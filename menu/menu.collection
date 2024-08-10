@@ -6,5 +6,13 @@ embedded_instances {
   "  id: \"menu\"\n"
   "  component: \"/menu/menu.gui\"\n"
   "}\n"
+  "components {\n"
+  "  id: \"controls\"\n"
+  "  component: \"/menu/controls.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"credits\"\n"
+  "  component: \"/menu/credits.gui\"\n"
+  "}\n"
   ""
 }
