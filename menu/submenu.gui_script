@@ -1,23 +1,20 @@
-local root
-
-local function show()
-	gui.set_enabled(root, true)
+local function show(self)
+	gui.set_enabled(self.root, true)
 end
 
-local function hide()
-	gui.set_enabled(root, false)
+local function hide(self)
+	gui.set_enabled(self.root, false)
 end
 
 function init(self)
-	print("init")
-	root = gui.get_node("root")
-	hide()
+	self.root = gui.get_node("root")
+	hide(self)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("show") then
-		show()
+		show(self)
 	elseif message_id == hash("hide") then
-		hide()
+		hide(self)
 	end
 end

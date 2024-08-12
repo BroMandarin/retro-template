@@ -12,11 +12,16 @@ end
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	
+	self.enabled = true
 end
 
 function on_input(self, action_id, action)
+	if not self.enabled then return end
+	
 	if action_id == hashes.ACTION then
 		hide()
 		msg.post("#menu", "show")
+		self.enabled = false
 	end
 end

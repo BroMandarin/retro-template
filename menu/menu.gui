@@ -1,4 +1,4 @@
-script: "/menu/submenu.gui_script"
+script: "/menu/menu.gui_script"
 fonts {
   name: "shadow"
   font: "/assets/font/shadow.font"
