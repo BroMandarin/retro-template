@@ -3,6 +3,10 @@ fonts {
   name: "shadow"
   font: "/assets/font/shadow.font"
 }
+textures {
+  name: "menu"
+  texture: "/menu/menu.atlas"
+}
 nodes {
   position {
     x: 160.0
@@ -19,8 +23,28 @@ nodes {
   visible: false
 }
 nodes {
+  type: TYPE_BOX
+  texture: "menu/bg"
+  id: "box"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
   position {
-    y: 16.0
+    y: 40.0
+  }
+  type: TYPE_BOX
+  texture: "menu/logo"
+  id: "logo"
+  parent: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -5.0
   }
   size {
     x: 128.0
@@ -37,6 +61,9 @@ nodes {
   inherit_alpha: true
 }
 nodes {
+  position {
+    y: -21.0
+  }
   size {
     x: 128.0
     y: 8.0
@@ -53,7 +80,7 @@ nodes {
 }
 nodes {
   position {
-    y: -16.0
+    y: -37.0
   }
   size {
     x: 128.0
