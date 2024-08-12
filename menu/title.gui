@@ -1,13 +1,17 @@
-script: "/menu/submenu.gui_script"
+script: "/menu/title.gui_script"
+fonts {
+  name: "press_start_8"
+  font: "/assets/font/press_start_8.font"
+}
 fonts {
   name: "shadow"
   font: "/assets/font/shadow.font"
 }
+textures {
+  name: "menu"
+  texture: "/menu/menu.atlas"
+}
 nodes {
-  position {
-    x: 160.0
-    y: 90.0
-  }
   size {
     x: 1.0
     y: 1.0
@@ -20,49 +24,29 @@ nodes {
 }
 nodes {
   position {
-    y: 16.0
+    x: 160.0
+    y: 128.0
   }
-  size {
-    x: 128.0
-    y: 8.0
-  }
-  type: TYPE_TEXT
-  text: "START"
-  font: "shadow"
-  id: "start"
-  shadow {
-    z: 1.0
-  }
+  type: TYPE_BOX
+  texture: "menu/logo"
+  id: "logo"
   parent: "root"
   inherit_alpha: true
-}
-nodes {
-  size {
-    x: 128.0
-    y: 8.0
-  }
-  type: TYPE_TEXT
-  text: "CONTROLS"
-  font: "shadow"
-  id: "controls"
-  shadow {
-    z: 1.0
-  }
-  parent: "root"
-  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    y: -16.0
+    x: 160.0
+    y: 64.0
   }
   size {
-    x: 128.0
+    x: 320.0
     y: 8.0
   }
   type: TYPE_TEXT
-  text: "CREDITS"
+  text: "- PRESS START -"
   font: "shadow"
-  id: "credits"
+  id: "pressstart"
   shadow {
     z: 1.0
   }

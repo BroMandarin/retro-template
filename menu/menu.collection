@@ -3,8 +3,8 @@ scale_along_z: 0
 embedded_instances {
   id: "gui"
   data: "components {\n"
-  "  id: \"menu\"\n"
-  "  component: \"/menu/menu.gui\"\n"
+  "  id: \"title\"\n"
+  "  component: \"/menu/title.gui\"\n"
   "}\n"
   "components {\n"
   "  id: \"controls\"\n"
@@ -13,6 +13,10 @@ embedded_instances {
   "components {\n"
   "  id: \"credits\"\n"
   "  component: \"/menu/credits.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"menu\"\n"
+  "  component: \"/menu/menu.gui\"\n"
   "}\n"
   ""
 }
