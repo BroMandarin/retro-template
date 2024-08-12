@@ -1,0 +1,10 @@
+font: "/assets/font/PressStart2P-Regular.ttf"
+material: "/builtins/fonts/font.material"
+size: 8
+antialias: 0
+shadow_alpha: 1.0
+shadow_blur: 0
+shadow_x: 1.0
+shadow_y: -1.0
+render_mode: MODE_MULTI_LAYER
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

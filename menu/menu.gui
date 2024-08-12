@@ -1,7 +1,11 @@
-script: ""
+script: "/menu/menu.gui_script"
 fonts {
   name: "press_start_8"
   font: "/assets/font/press_start_8.font"
+}
+fonts {
+  name: "shadow"
+  font: "/assets/font/shadow.font"
 }
 textures {
   name: "menu"
@@ -41,8 +45,11 @@ nodes {
   }
   type: TYPE_TEXT
   text: "- PRESS START -"
-  font: "press_start_8"
+  font: "shadow"
   id: "pressstart"
+  shadow {
+    z: 1.0
+  }
   parent: "root"
   inherit_alpha: true
 }

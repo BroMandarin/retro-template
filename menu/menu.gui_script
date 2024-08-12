@@ -1,0 +1,22 @@
+local hashes = require("game.core.hashes")
+
+local controls, credits
+
+local function show()
+	
+end
+
+local function hide()
+	
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+end
+
+function on_input(self, action_id, action)
+	if action_id == hashes.ACTION then
+		hide()
+		msg.post("#credits", "show")
+	end
+end
