@@ -1,9 +1,13 @@
+local hashes = require("game.core.hashes")
+
 local function show(self)
 	gui.set_enabled(self.root, true)
+	self.enabled = true
 end
 
 local function hide(self)
 	gui.set_enabled(self.root, false)
+	self.enabled = false
 end
 
 function init(self)
@@ -16,5 +20,15 @@ function on_message(self, message_id, message, sender)
 		show(self)
 	elseif message_id == hash("hide") then
 		hide(self)
+	end
+end
+
+function on_input(self, action_id, action)
+	if not self.enabled then return end
+	if not action.pressed then return end
+	
+	if action_id == hashes.ACTION or action_id == hashes.EXIT then
+		hide(self)
+		msg.post("#menu", "show")
 	end
 end

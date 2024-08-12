@@ -7,7 +7,7 @@ local root, start_n, controls_n, credits_n
 local elements = {}
 local selected_element = 1
 
-local function show()
+local function show(self)
 	gui.set_enabled(root, true)
 
 	for e = 1, #elements do
@@ -17,11 +17,13 @@ local function show()
 			gui.set_shadow(elements[e], SHADOW_HIDDEN)
 		end
 	end
+	
+	self.enabled = true
 end
 
-local function hide()
+local function hide(self)
 	gui.set_enabled(root, false)
-	print("hide menu")
+	self.enabled = false
 end
 
 local function update_shadow()
@@ -34,26 +36,26 @@ local function update_shadow()
 	end
 end
 
-local function start()
+local function start(self)
 end
 
-local function controls()
-	hide()
+local function controls(self)
+	hide(self)
 	msg.post("#controls", "show")
 end
 
-local function credits()
-	hide()
+local function credits(self)
+	hide(self)
 	msg.post("#credits", "show")
 end
 
-local function accept(id)
+local function accept(self, id)
 	if id == 1 then
-		start()
+		start(self)
 	elseif id == 2 then
-		controls()
+		controls(self)
 	elseif id == 3 then
-		credits()
+		credits(self)
 	end
 end
 
@@ -77,26 +79,26 @@ end
 
 function init(self)
 	get_nodes()
-	hide()
+	hide(self)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("show") then
-		show()
+		show(self)
 	elseif message_id == hash("hide") then
-		hide()
+		hide(self)
 	end
 end
 
 function on_input(self, action_id, action)
 	if not action.pressed then return end
-	if not gui.is_enabled(root) then return end
+	if not self.enabled then return end
 
 	if action_id == hashes.UP then
 		select_element(selected_element - 1)
 	elseif action_id == hashes.DOWN then
 		select_element(selected_element + 1)
 	elseif action_id == hashes.ACTION then
-		accept(selected_element)
+		accept(self, selected_element)
 	end
 end
